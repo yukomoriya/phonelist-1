@@ -12,6 +12,7 @@ print("""Hello and welcome to the phone list, available commands:
 ADD - add a phone number
 DELETE - delete a contact
 LIST - list all phone numbers
+SAVE - save the list
 QUIT - quit the program
 Command:""")
 
@@ -52,6 +53,7 @@ while True: ## REPL - Read Execute Program Loop
         print("""Command: REMOVE
                 Unknown command: REMOVE
                 Try again!""")
-    elif cmd == "QUIT":
+    elif cmd == "SAVE":
         save_phonelist(conn)
+    elif cmd == "QUIT":
         exit()
