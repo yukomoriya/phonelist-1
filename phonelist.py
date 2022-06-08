@@ -9,10 +9,10 @@ password="abc123"
 )
 
 print("""Hello and welcome to the phone list, available commands:
-add - add a phone number
-delete - delete a contact
-list - list all phone numbers
-quit - quit the program
+ADD - add a phone number
+DELETE - delete a contact
+LIST - list all phone numbers
+QUIT - quit the program
 Command:""")
 
 def read_phonelist(C):
@@ -38,7 +38,7 @@ def save_phonelist(C):
     cur.close()
 
 while True: ## REPL - Read Execute Program Loop
-    cmd = input("Command: ")
+    cmd = input("Command: ").upper()
     if cmd == "LIST":
         print(read_phonelist(conn))
     elif cmd == "ADD":
@@ -48,6 +48,10 @@ while True: ## REPL - Read Execute Program Loop
     elif cmd == "DELETE":
         name = input("  Name: ")
         delete_phone(conn, name)
+    elif cmd == "REMOVE":
+        print("""Command: REMOVE
+                Unknown command: REMOVE
+                Try again!""")
     elif cmd == "QUIT":
         save_phonelist(conn)
         exit()
