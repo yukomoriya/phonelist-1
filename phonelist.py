@@ -1,12 +1,12 @@
-import sqlite3
-conn = sqlite3.connect("phone.db")
+#import sqlite3
+#conn = sqlite3.connect("phone.db")
 
-#import psycopg2
-#conn = psycopg2.connect(host="localhost",
-#database="phone",
-#user="phone",
-#password="abc123"
-#)
+import psycopg2
+conn = psycopg2.connect(host="localhost",
+database="phone",
+user="phone",
+password="abc123"
+)
 
 print("""Hello and welcome to the phone list, available commands:
 add - add a phone number
